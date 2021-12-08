@@ -9,9 +9,10 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, SearchBarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

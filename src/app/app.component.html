@@ -3,18 +3,5 @@
 </mat-toolbar>
 
 <main class="mat-app-background p-1 h-100">
-  <mat-form-field class="w-100" appearance="fill">
-    <mat-label>Courier Provider</mat-label>
-    <mat-select>
-      <mat-option *ngFor="let c of courierProvider" [value]="c">{{
-        c
-      }}</mat-option>
-    </mat-select>
-  </mat-form-field>
-
-  <mat-form-field appearance="fill" class="w-100">
-    <mat-label>Tracking Number</mat-label>
-    <input matInput />
-  </mat-form-field>
-  <button mat-raised-button color="primary">Search</button>
+  <app-search-bar></app-search-bar>
 </main>
