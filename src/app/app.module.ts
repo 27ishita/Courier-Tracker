@@ -10,9 +10,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { TrackingInfoComponent } from './tracking-info/tracking-info.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, SearchBarComponent],
+  declarations: [AppComponent, SearchBarComponent, TrackingInfoComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -22,6 +24,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

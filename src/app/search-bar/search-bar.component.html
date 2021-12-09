@@ -1,6 +1,6 @@
 <mat-form-field class="w-100" appearance="fill">
   <mat-label>Courier Provider</mat-label>
-  <mat-select>
+  <mat-select [(value)]="trackingProvider">
     <mat-option *ngFor="let c of courierProvider" [value]="c">{{
       c
     }}</mat-option>
@@ -9,6 +9,13 @@
 
 <mat-form-field appearance="fill" class="w-100">
   <mat-label>Tracking Number</mat-label>
-  <input matInput />
+  <input matInput [(ngModel)]="trackingNumber" />
 </mat-form-field>
-<button mat-raised-button color="primary">Search</button>
+<button
+  mat-raised-button
+  color="primary"
+  (click)="trackingDetails()"
+  [disabled]="!trackingNumber || !trackingProvider"
+>
+  Search
+</button>

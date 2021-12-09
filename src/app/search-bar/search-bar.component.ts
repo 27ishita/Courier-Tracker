@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-bar',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-bar.component.scss'],
 })
 export class SearchBarComponent implements OnInit {
-  constructor() {}
+  constructor(private router: Router) {}
+  trackingNumber: string = '';
+  trackingProvider: string = '';
 
   ngOnInit(): void {}
   courierProvider = [
@@ -21,4 +24,13 @@ export class SearchBarComponent implements OnInit {
     'Shadowfax',
     'XpressBees',
   ];
+
+  trackingDetails() {
+    console.log('working');
+    this.router.navigate([
+      '/details',
+      this.trackingProvider.toLocaleLowerCase(),
+      this.trackingNumber,
+    ]);
+  }
 }
