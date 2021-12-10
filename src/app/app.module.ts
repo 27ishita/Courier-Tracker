@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { TrackingInfoComponent } from './tracking-info/tracking-info.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, SearchBarComponent, TrackingInfoComponent],
@@ -25,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     MatButtonModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
