@@ -13,6 +13,10 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { TrackingInfoComponent } from './tracking-info/tracking-info.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [AppComponent, SearchBarComponent, TrackingInfoComponent],
@@ -27,6 +31,10 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     FormsModule,
     HttpClientModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatListModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,0 +1,10 @@
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  & > {
+    flex-basis: 33%;
+    text-align: left;
+  }
+}

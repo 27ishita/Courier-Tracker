@@ -1,3 +1,20 @@
-<div *ngFor="let d of details">
-  <li>{{ d.location }}</li>
-</div>
+<mat-spinner class="mx-auto" *ngIf="isLoading"></mat-spinner>
+<p *ngIf="isFailed">no result found</p>
+<mat-list role="list">
+  <mat-list-item *ngFor="let d of details" role="listitem">
+    <div class="detail-item">
+      <div>
+        <mat-icon mat-list-icon>where_to_vote</mat-icon>
+        {{ d.location }}
+      </div>
+      <div>
+        <mat-icon mat-list-icon>info</mat-icon>
+        {{ d.detail }}
+      </div>
+      <div>
+        <mat-icon mat-list-icon>event_available</mat-icon>
+        {{ d.date | date: "short" }}
+      </div>
+    </div>
+  </mat-list-item>
+</mat-list>
