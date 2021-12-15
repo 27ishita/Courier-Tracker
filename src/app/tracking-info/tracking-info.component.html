@@ -3,8 +3,8 @@
 <p *ngIf="isFailed" class="error-text">
   <mat-icon mat-list-icon>report_problem</mat-icon>No result found
 </p>
-<mat-list role="list">
-  <mat-list-item *ngFor="let d of details" role="listitem">
+<mat-list class="mt-2" role="list">
+  <mat-list-item class="mb-3" *ngFor="let d of details" role="listitem">
     <div class="detail-item">
       <div>
         <mat-icon mat-list-icon>where_to_vote</mat-icon>
