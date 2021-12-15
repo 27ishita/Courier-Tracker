@@ -1,5 +1,8 @@
 <mat-spinner class="mx-auto" *ngIf="isLoading"></mat-spinner>
-<p *ngIf="isFailed">no result found</p>
+
+<p *ngIf="isFailed" class="error-text">
+  <mat-icon mat-list-icon>report_problem</mat-icon>No result found
+</p>
 <mat-list role="list">
   <mat-list-item *ngFor="let d of details" role="listitem">
     <div class="detail-item">

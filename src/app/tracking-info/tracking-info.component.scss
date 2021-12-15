@@ -11,3 +11,11 @@
     align-items: center;
   }
 }
+
+.error-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 1rem;
+}

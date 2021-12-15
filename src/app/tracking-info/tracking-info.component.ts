@@ -18,20 +18,29 @@ export class TrackingInfoComponent implements OnInit {
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
   ngOnInit(): void {
-    const courierProvider = this.route.snapshot.paramMap.get('provider');
-    const trackingNumber = this.route.snapshot.paramMap.get('number');
-    this.isLoading = true;
-    this.isFailed = false;
+    this.route.paramMap.subscribe((paramMap) => {
+      const courierProvider = paramMap.get('provider');
+      const trackingNumber = paramMap.get('number');
+      this.isLoading = true;
+      this.isFailed = false;
+      this.details = [];
 
-    this.http
-      .get(`${this.url}/${courierProvider}/${trackingNumber}`)
-      .subscribe((data: any) => {
-        this.isLoading = false;
-        if (data.status === 'failed') {
-          this.isFailed = true;
-        } else {
-          this.details = data.data;
-        }
-      });
+      this.http
+        .get(`${this.url}/${courierProvider}/${trackingNumber}`)
+        .subscribe(
+          (data: any) => {
+            this.isLoading = false;
+            if (data.status === 'failed') {
+              this.isFailed = true;
+            } else {
+              this.details = data.data;
+            }
+          },
+          (error) => {
+            this.isFailed = true;
+            this.isLoading = false;
+          }
+        );
+    });
   }
 }
