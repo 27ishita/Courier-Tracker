@@ -3,8 +3,11 @@
   justify-content: space-between;
   width: 100%;
   align-items: center;
-  & > {
+  flex-wrap: wrap;
+  & > * {
     flex-basis: 33%;
     text-align: left;
+    display: flex;
+    align-items: center;
   }
 }
