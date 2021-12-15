@@ -3,21 +3,25 @@
 <p *ngIf="isFailed" class="error-text">
   <mat-icon mat-list-icon>report_problem</mat-icon>No result found
 </p>
-<mat-list class="mt-2" role="list">
-  <mat-list-item class="mb-3" *ngFor="let d of details" role="listitem">
-    <div class="detail-item">
-      <div>
-        <mat-icon mat-list-icon>where_to_vote</mat-icon>
-        {{ d.location }}
+<mat-list class="mt-2">
+  <ng-container *ngFor="let d of details">
+    <mat-list-item>
+      <div class="detail-item">
+        <div>
+          <mat-icon mat-list-icon>where_to_vote</mat-icon>
+          {{ d.location }}
+        </div>
+
+        <div>
+          <mat-icon mat-list-icon>info</mat-icon>
+          {{ d.detail }}
+        </div>
+        <div>
+          <mat-icon mat-list-icon>event_available</mat-icon>
+          {{ d.date | date: "short" }}
+        </div>
       </div>
-      <div>
-        <mat-icon mat-list-icon>info</mat-icon>
-        {{ d.detail }}
-      </div>
-      <div>
-        <mat-icon mat-list-icon>event_available</mat-icon>
-        {{ d.date | date: "short" }}
-      </div>
-    </div>
-  </mat-list-item>
+    </mat-list-item>
+    <mat-divider class="divider"></mat-divider>
+  </ng-container>
 </mat-list>

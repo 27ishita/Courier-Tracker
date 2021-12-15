@@ -19,10 +19,19 @@
   margin-top: 2rem;
   gap: 1rem;
 }
+
+.divider {
+  margin-bottom: 1rem;
+}
+
 @media only screen and (max-width: 600px) {
   .detail-item {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+  }
+
+  .divider {
+    margin: 2rem;
   }
 }
