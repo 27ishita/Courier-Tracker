@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { InfoComponent } from './info/info.component';
 
 @Component({
   selector: 'app-root',
@@ -16,4 +18,11 @@ export class AppComponent {
     'Gati',
     'ShadowFax',
   ];
+
+  constructor(public dialog: MatDialog) {}
+
+  openDialog() {
+    console.log('open info');
+    const dialogRef = this.dialog.open(InfoComponent);
+  }
 }
